@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyijdehyvj2lp"]
+[gd_scene load_steps=12 format=3 uid="uid://cyijdehyvj2lp"]
 
 [ext_resource type="Script" uid="uid://djiygmrw8ca6t" path="res://scenes/system/menu_manager/menus/checkpoint/checkpoint.gd" id="1_2ulky"]
 [ext_resource type="PackedScene" uid="uid://dy8q2coo306yy" path="res://scenes/objects/keypad/upgrades/decimals/baby_step.tscn" id="2_18e8r"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cpoffg5gxfv1x" path="res://scenes/objects/keypad/upgrades/passives/exponential_growth.tscn" id="5_40ujd"]
 [ext_resource type="PackedScene" uid="uid://frp40l3yfhb" path="res://scenes/objects/keypad/upgrades/passives/overtime.tscn" id="6_1ip8i"]
 [ext_resource type="StyleBox" uid="uid://u61w75f0qquo" path="res://assets/styleboxes/standard.tres" id="7_6jjl2"]
+[ext_resource type="PackedScene" uid="uid://3lpq75qst0y5" path="res://scenes/objects/keypad/upgrades/passives/buffer.tscn" id="7_taubm"]
 
 [sub_resource type="Animation" id="Animation_18e8r"]
 resource_name = "RESET"
@@ -53,7 +54,7 @@ anchors_preset = 0
 script = ExtResource("1_2ulky")
 option_buttons = [NodePath("upgrade_options/option_1"), NodePath("upgrade_options/option_2"), NodePath("upgrade_options/option_3")]
 splash = NodePath("notice")
-upgrade_pool = Array[PackedScene]([ExtResource("2_18e8r"), ExtResource("3_6jjl2"), ExtResource("4_taubm"), ExtResource("5_40ujd"), ExtResource("6_1ip8i")])
+upgrade_pool = Array[PackedScene]([ExtResource("2_18e8r"), ExtResource("3_6jjl2"), ExtResource("4_taubm"), ExtResource("5_40ujd"), ExtResource("6_1ip8i"), ExtResource("7_taubm")])
 
 [node name="notice" type="Label" parent="."]
 layout_mode = 1

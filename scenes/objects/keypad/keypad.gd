@@ -14,6 +14,7 @@ var current_operation
 var current_val = 0
 var val_a = 0
 var current_difficulty: int = 1
+@export var max_difficulty: int = 4
 
 func _ready() -> void:
 	current_operation = operators.IDLE
@@ -130,6 +131,7 @@ func disable_operators(disabled_operators: Array[Button], flash: bool = true) ->
 
 func game_start() -> void:
 	current_difficulty = 1
+	max_difficulty = 4
 	restore_buttons(false)
 	disable_buttons(get_random_numbers(), false)
 	clear()
@@ -149,11 +151,14 @@ func flash_button(object: Node, color: Color, shrink: bool) -> void:
 	tween.tween_property(object, "modulate", Color(1, 1, 1, 1), 1.5)
 	tween.parallel().tween_property(object, "scale", old_scale, 0.1)
 
-func get_random_numbers(qty: int = current_difficulty, maximum: int = 4) -> Array[Button]:
+func get_random_numbers(qty: int = current_difficulty, maximum: int = max_difficulty) -> Array[Button]:
 	var selected_buttons: Array[Button]
 	var progress: int = 0
 	
-	if qty > maximum:
+	if maximum < 1:
+		maximum = 1
+	
+	if qty > clamp(maximum, 0, max_difficulty):
 		qty = maximum
 	
 	while progress < qty:

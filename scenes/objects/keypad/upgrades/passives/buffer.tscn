@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://3lpq75qst0y5"]
+
+[ext_resource type="Script" uid="uid://ched5oqnd1m1h" path="res://scenes/objects/keypad/upgrades/passives/buffer.gd" id="1_av0jf"]
+
+[node name="buffer" type="Node2D"]
+script = ExtResource("1_av0jf")
+plain_text_name = "Buffer"
+description = "Passive
+Reduces maximum number of disabled buttons."
+metadata/_custom_type_script = "uid://c1eaatkhjhiai"

@@ -15,7 +15,7 @@ target = NodePath("game_area/target")
 game_area = NodePath("game_area")
 game_timer = NodePath("game_clock")
 keypad = NodePath("game_area/keypad")
-difficulty = 10
+difficulty = 1
 
 [node name="player_view" parent="." instance=ExtResource("2_6awnf")]
 position = Vector2(0, 320)
