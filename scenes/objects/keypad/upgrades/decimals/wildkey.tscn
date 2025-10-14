@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7uaawxq55h6k"]
+
+[ext_resource type="Script" uid="uid://cxxfscrs7w6m6" path="res://scenes/objects/keypad/upgrades/decimals/wildkey.gd" id="1_vdvh6"]
+
+[node name="wildkey" type="Node2D"]
+script = ExtResource("1_vdvh6")
+base_charges = 1
+plain_text_name = "Wildkey"
+description = "Decimal
+When activated, allows the one-time use of any currently disabled key"
+metadata/_custom_type_script = "uid://p8fxtretn5p7"

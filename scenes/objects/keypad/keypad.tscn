@@ -1,0 +1,219 @@
+[gd_scene load_steps=20 format=3 uid="uid://biii0yupaxt6i"]
+
+[ext_resource type="Script" uid="uid://0jiuuvka6lpu" path="res://scenes/objects/keypad/keypad.gd" id="1_pjgby"]
+[ext_resource type="Shortcut" uid="uid://bo5xcwwj3ha62" path="res://resources/shortcuts/division.tres" id="2_csbst"]
+[ext_resource type="Shortcut" uid="uid://8c8v1ngil2cf" path="res://resources/shortcuts/num_lock.tres" id="2_d3wfb"]
+[ext_resource type="Shortcut" uid="uid://bwga4m5dmgl4y" path="res://resources/shortcuts/multiplication.tres" id="3_d3wfb"]
+[ext_resource type="Shortcut" uid="uid://hxgpa7bk48mp" path="res://resources/shortcuts/subtraction.tres" id="4_mv5bk"]
+[ext_resource type="Shortcut" uid="uid://clil4bogd4m72" path="res://resources/shortcuts/addition.tres" id="5_v6y13"]
+[ext_resource type="Shortcut" uid="uid://cp11qmgxpaqed" path="res://resources/shortcuts/seven.tres" id="6_x480a"]
+[ext_resource type="Shortcut" uid="uid://dksf36ww3hkvh" path="res://resources/shortcuts/four.tres" id="7_84owv"]
+[ext_resource type="Shortcut" uid="uid://c8xmejxi4hc35" path="res://resources/shortcuts/one.tres" id="8_4upl7"]
+[ext_resource type="Shortcut" uid="uid://ddp7yw4un8ofb" path="res://resources/shortcuts/zero.tres" id="9_1ea74"]
+[ext_resource type="Shortcut" uid="uid://6fco52pjyy1n" path="res://resources/shortcuts/eight.tres" id="10_rcrol"]
+[ext_resource type="Shortcut" uid="uid://cyyailh3yb62f" path="res://resources/shortcuts/five.tres" id="11_gjua8"]
+[ext_resource type="Shortcut" uid="uid://43r2qf2ei1o" path="res://resources/shortcuts/two.tres" id="12_58esm"]
+[ext_resource type="Shortcut" uid="uid://kd6aisbvqptp" path="res://resources/shortcuts/decimal.tres" id="13_kmm2m"]
+[ext_resource type="Shortcut" uid="uid://cump2x2tv3dqx" path="res://resources/shortcuts/nine.tres" id="14_o7q7d"]
+[ext_resource type="Shortcut" uid="uid://c5m7yqgro6k00" path="res://resources/shortcuts/six.tres" id="15_fhmnx"]
+[ext_resource type="Shortcut" uid="uid://1acur5bsnaeu" path="res://resources/shortcuts/three.tres" id="16_mrj5d"]
+[ext_resource type="Shortcut" uid="uid://cjbkeaxv443ul" path="res://resources/shortcuts/enter.tres" id="17_qab7l"]
+[ext_resource type="Shortcut" uid="uid://kj7dtguk8v8s" path="res://resources/shortcuts/send.tres" id="18_b3j8a"]
+
+[node name="keypad" type="Control" node_paths=PackedStringArray("charges", "disp", "buttons", "ops") groups=["keypad"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pjgby")
+charges = NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/fifth_row/decimal/Label")
+disp = NodePath("PanelContainer/VBoxContainer/display_master/display")
+buttons = [NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/second_row/7"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/third_row/4"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/fourth_row/1"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/fifth_row/0"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/second_row/8"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/third_row/5"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/fourth_row/2"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/second_row/9"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/third_row/6"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/fourth_row/3")]
+ops = [NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/first_row/division"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/left_grid/first_row/multiplication"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/right_column/subtraction"), NodePath("PanelContainer/VBoxContainer/HBoxContainer/right_column/addition")]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 384.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="display_master" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="display" type="Label" parent="PanelContainer/VBoxContainer/display_master"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="left_grid" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="first_row" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="num_lock" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/first_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+shortcut = ExtResource("2_d3wfb")
+text = "Num Lock"
+autowrap_mode = 2
+
+[node name="division" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/first_row" groups=["button", "operators"]]
+layout_mode = 2
+size_flags_horizontal = 3
+shortcut = ExtResource("2_csbst")
+text = "÷"
+
+[node name="multiplication" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/first_row" groups=["button", "operators"]]
+layout_mode = 2
+size_flags_horizontal = 3
+shortcut = ExtResource("3_d3wfb")
+text = "x"
+
+[node name="second_row" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="7" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/second_row" groups=["button", "numbers"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("6_x480a")
+text = "7"
+
+[node name="8" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/second_row" groups=["button", "numbers"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("10_rcrol")
+text = "8"
+
+[node name="9" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/second_row" groups=["button", "numbers"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("14_o7q7d")
+text = "9"
+
+[node name="third_row" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="4" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/third_row" groups=["button", "numbers"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("7_84owv")
+text = "4"
+
+[node name="5" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/third_row" groups=["button", "numbers"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("11_gjua8")
+text = "5"
+
+[node name="6" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/third_row" groups=["button", "numbers"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("15_fhmnx")
+text = "6"
+
+[node name="fourth_row" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="1" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/fourth_row" groups=["button", "numbers"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("8_4upl7")
+text = "1"
+
+[node name="2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/fourth_row" groups=["button", "numbers"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("12_58esm")
+text = "2"
+
+[node name="3" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/fourth_row" groups=["button", "numbers"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("16_mrj5d")
+text = "3"
+
+[node name="fifth_row" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="0" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/fifth_row" groups=["button", "numbers"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.1
+shortcut = ExtResource("9_1ea74")
+text = "0"
+
+[node name="decimal" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/fifth_row" groups=["decimal"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("13_kmm2m")
+text = "."
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/left_grid/fifth_row/decimal"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 40.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 10
+
+[node name="right_column" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="subtraction" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/right_column" groups=["button", "operators"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("4_mv5bk")
+text = "-"
+
+[node name="addition" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/right_column" groups=["button", "operators"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+shortcut = ExtResource("5_v6y13")
+text = "+"
+
+[node name="enter" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/right_column" groups=["enter"]]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+shortcut = ExtResource("17_qab7l")
+text = "="
+
+[node name="clear" type="Button" parent="PanelContainer"]
+visible = false
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+shortcut = ExtResource("18_b3j8a")
+text = "Fire!"

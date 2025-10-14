@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpoffg5gxfv1x"]
+
+[ext_resource type="Script" uid="uid://ku4nu42rgfo6" path="res://scenes/objects/keypad/upgrades/passives/exponential_growth.gd" id="1_yepul"]
+
+[node name="exponential_growth" type="Node2D"]
+script = ExtResource("1_yepul")
+base_bonus = 1.1
+timeout = 3.0
+purchase_cost = 20.0
+plain_text_name = "Exponential Growth"
+description = "Passive
+Solving targets quickly grants an escalating score bonus, growing exponentially. Initial bonus: %f, Time to reset bonus: %f"
+metadata/_custom_type_script = "uid://c1eaatkhjhiai"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0

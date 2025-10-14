@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://jb1ymma0w6he"]
+
+[ext_resource type="PackedScene" uid="uid://dfwc5yjsjcotg" path="res://scenes/system/menu_manager/menus/main_menu/main_menu.tscn" id="1_42y6h"]
+[ext_resource type="Script" uid="uid://f1nai0smmgwi" path="res://scenes/system/menu_manager/menu_manager.gd" id="1_pfqts"]
+[ext_resource type="PackedScene" uid="uid://bom1o1n1kl14j" path="res://scenes/system/menu_manager/menus/game_over/game_over_screen.tscn" id="2_ga2f4"]
+[ext_resource type="PackedScene" uid="uid://cyijdehyvj2lp" path="res://scenes/system/menu_manager/menus/checkpoint/checkpoint.tscn" id="3_pfqts"]
+
+[node name="menu_manager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pfqts")
+
+[node name="game_over" parent="." instance=ExtResource("2_ga2f4")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -134.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main_menu" parent="." instance=ExtResource("1_42y6h")]
+layout_mode = 1
+offset_left = 576.0
+offset_top = 176.0
+offset_right = -576.0
+offset_bottom = -472.0
+
+[node name="checkpoint" parent="." instance=ExtResource("3_pfqts")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 577.0
+offset_top = 208.0
+offset_right = -575.0
+offset_bottom = -440.0
+grow_horizontal = 2
+grow_vertical = 2

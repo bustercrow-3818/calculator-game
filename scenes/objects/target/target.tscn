@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnts3lg7xx3a1"]
+
+[ext_resource type="Script" uid="uid://qlcftvyj5o0c" path="res://scenes/objects/target/target.gd" id="1_wpilh"]
+
+[node name="target" type="Node2D" node_paths=PackedStringArray("goal", "title", "score_display")]
+script = ExtResource("1_wpilh")
+goal = NodePath("PanelContainer/VBoxContainer/goal")
+title = NodePath("PanelContainer/VBoxContainer/title")
+score_display = NodePath("current_score")
+difficulty = 10
+score_scaling = 10.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 192.0
+offset_bottom = 104.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "Target"
+horizontal_alignment = 1
+
+[node name="goal" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="current_score" type="Label" parent="."]
+offset_top = -16.0
+offset_right = 192.0
+offset_bottom = 1.0
+theme_override_font_sizes/font_size = 12
+text = "Score: 0"
+horizontal_alignment = 1

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bts84m1vg7cex"]
+
+[ext_resource type="Script" uid="uid://0v8bxh6bpckp" path="res://scenes/objects/test_button/test_button.gd" id="1_214l1"]
+
+[node name="test_button" type="Node2D"]
+script = ExtResource("1_214l1")
+power = 6
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "not set"

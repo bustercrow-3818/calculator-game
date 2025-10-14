@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfstf3tbrydyt"]
+
+[ext_resource type="PackedScene" uid="uid://cnts3lg7xx3a1" path="res://scenes/objects/target/target.tscn" id="1_e8ww3"]
+[ext_resource type="Script" uid="uid://b31q2yvoofnve" path="res://scenes/system/main.gd" id="1_xoti3"]
+[ext_resource type="PackedScene" uid="uid://snupxdhsniim" path="res://scenes/system/player_view/player_view.tscn" id="2_6awnf"]
+[ext_resource type="PackedScene" uid="uid://biii0yupaxt6i" path="res://scenes/objects/keypad/keypad.tscn" id="3_ii55j"]
+[ext_resource type="PackedScene" uid="uid://bt8vwf4csntuu" path="res://scenes/objects/game_clock/game_clock.tscn" id="4_5m258"]
+[ext_resource type="PackedScene" uid="uid://8anf2lm4mwjq" path="res://scenes/system/upgrade_manager/upgrade_manager.tscn" id="7_uaibl"]
+[ext_resource type="PackedScene" uid="uid://jb1ymma0w6he" path="res://scenes/system/menu_manager/menu_manager.tscn" id="8_t1oto"]
+
+[node name="main" type="Node2D" node_paths=PackedStringArray("menu_manager", "target", "game_area", "game_timer", "keypad")]
+script = ExtResource("1_xoti3")
+menu_manager = NodePath("menu_manager")
+target = NodePath("game_area/target")
+game_area = NodePath("game_area")
+game_timer = NodePath("game_clock")
+keypad = NodePath("game_area/keypad")
+difficulty = 10
+
+[node name="player_view" parent="." instance=ExtResource("2_6awnf")]
+position = Vector2(0, 320)
+
+[node name="game_area" type="Node2D" parent="."]
+visible = false
+
+[node name="target" parent="game_area" instance=ExtResource("1_e8ww3")]
+position = Vector2(-96, 89)
+
+[node name="keypad" parent="game_area" instance=ExtResource("3_ii55j")]
+offset_left = -192.0
+offset_top = 200.0
+offset_right = -152.0
+offset_bottom = 240.0
+
+[node name="upgrade_manager" parent="game_area" node_paths=PackedStringArray("keypad", "target", "clock") instance=ExtResource("7_uaibl")]
+keypad = NodePath("../keypad")
+target = NodePath("../target")
+clock = NodePath("../../game_clock")
+
+[node name="menu_manager" parent="." instance=ExtResource("8_t1oto")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 320.0
+offset_bottom = 320.0
+
+[node name="game_clock" parent="." instance=ExtResource("4_5m258")]
+visible = false
+offset_left = 2.0
+offset_top = 64.0
+offset_right = 2.0
+offset_bottom = 64.0
+
+[node name="debug_button" type="Button" parent="."]
+visible = false
+offset_left = -512.0
+offset_top = 64.0
+offset_right = -504.0
+offset_bottom = 72.0
+text = "run"
