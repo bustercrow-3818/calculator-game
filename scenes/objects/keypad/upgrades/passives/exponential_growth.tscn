@@ -9,7 +9,7 @@ timeout = 3.0
 purchase_cost = 20.0
 plain_text_name = "Exponential Growth"
 description = "Passive
-Solving targets quickly grants an escalating score bonus, growing exponentially. Initial bonus: %f, Time to reset bonus: %f"
+Solving targets quickly grants an escalating score bonus, growing exponentially. Initial bonus: 1.1, Time to reset bonus: 3.0s"
 metadata/_custom_type_script = "uid://c1eaatkhjhiai"
 
 [node name="Timer" type="Timer" parent="."]

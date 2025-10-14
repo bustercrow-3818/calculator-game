@@ -8,7 +8,12 @@ signal pickup_upgrade(upgrade: Upgrade)
 @export var splash: Label
 @export var upgrade_pool: Array[PackedScene]
 
-@onready var tooltip_label = $Label
+@onready var tooltip_block = $VBoxContainer
+@onready var tooltip_label = $VBoxContainer/tooltip
+@onready var tooltip: Dictionary = {"block": $VBoxContainer,
+"type": $VBoxContainer/HBoxContainer/type,
+"cost": $VBoxContainer/HBoxContainer/cost,
+"description": $VBoxContainer/tooltip}
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var test_var: PackedScene
 @onready var next_level: Button = $Button
@@ -24,9 +29,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if tooltip_tracking == true:
-		tooltip_label.global_position.x = get_global_mouse_position().x - tooltip_label.size.x
-		tooltip_label.global_position.y = get_global_mouse_position().y
-		tooltip_label.size = tooltip_label.get_minimum_size()
+		tooltip_block.global_position.x = get_global_mouse_position().x - tooltip_label.size.x
+		tooltip_block.global_position.y = get_global_mouse_position().y
+		tooltip_block.size = tooltip_block.get_minimum_size()
 
 func set_current_options() -> void:
 	var new_upgrade
@@ -98,9 +103,11 @@ func breath_pulse(start: bool) -> void:
 
 func show_tooltip(button: Button) -> void:
 	tooltip_label.text = upgrade_tooltips[button.text]
-	tooltip_label.show()
+	tooltip_block.show()
 	tooltip_tracking = true
+	pass
 	
 func hide_tooltip() -> void:
 	tooltip_tracking = false
-	tooltip_label.hide()
+	tooltip_block.hide()
+	pass

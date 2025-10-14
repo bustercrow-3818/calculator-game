@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0uldp7no7bk7"]
+
+[ext_resource type="Script" uid="uid://dj3lfn22aagbp" path="res://scenes/system/tooltip/tooltip.gd" id="1_iii4r"]
+[ext_resource type="StyleBox" uid="uid://u61w75f0qquo" path="res://assets/styleboxes/standard.tres" id="2_oinyi"]
+[ext_resource type="Resource" uid="uid://chv43punqjdg2" path="res://resources/tooltips/tooltip.tres" id="2_p4tyu"]
+
+[node name="tooltip" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iii4r")
+data = ExtResource("2_p4tyu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 192.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="type" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 8)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("2_oinyi")
+
+[node name="cost" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 8)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/normal = ExtResource("2_oinyi")
+
+[node name="description" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(128, 8)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("2_oinyi")
