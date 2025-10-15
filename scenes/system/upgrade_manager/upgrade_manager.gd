@@ -26,6 +26,8 @@ func gain_upgrade(upgrade: Upgrade, _unhandled_input = null) -> void:
 	elif upgrade is Decimal:
 		gain_decimal(upgrade)
 	
+	upgrade.purchased()
+	
 func gain_decimal(new_decimal: Decimal, _unhandled_input = null) -> void:
 	if current_decimal != null:
 		current_decimal.queue_free()
@@ -37,7 +39,7 @@ func gain_decimal(new_decimal: Decimal, _unhandled_input = null) -> void:
 
 func gain_passive(passive: PassiveUpgrade, _unhandled_input = null) -> void:
 	set_passive_data(passive)
-	
+
 
 func set_decimal_data() -> void:
 	if current_decimal == null:

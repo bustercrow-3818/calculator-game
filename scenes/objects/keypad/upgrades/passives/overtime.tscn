@@ -5,8 +5,8 @@
 [node name="overtime" type="Node2D"]
 script = ExtResource("1_jsm40")
 bonus_time = 1.0
-purchase_cost = 10.0
+cost = 45.0
 plain_text_name = "Overtime"
 description = "Passive
-Increases time reward for solves by %f seconds"
+Increases time reward for solves by 1 second"
 metadata/_custom_type_script = "uid://c1eaatkhjhiai"

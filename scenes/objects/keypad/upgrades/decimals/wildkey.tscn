@@ -5,6 +5,7 @@
 [node name="wildkey" type="Node2D"]
 script = ExtResource("1_vdvh6")
 base_charges = 1
+cost = 15.0
 plain_text_name = "Wildkey"
 description = "Decimal
 When activated, allows the one-time use of any currently disabled key"

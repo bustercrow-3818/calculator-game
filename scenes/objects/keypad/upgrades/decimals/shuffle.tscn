@@ -5,6 +5,7 @@
 [node name="shuffle" type="Node2D"]
 script = ExtResource("1_j7dvf")
 base_charges = 1
+cost = 10.0
 plain_text_name = "Shuffle"
 description = "Decimal
 Changes the current target to a random new one."

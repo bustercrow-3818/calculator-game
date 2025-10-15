@@ -1,7 +1,11 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://chv43punqjdg2"]
 
 [sub_resource type="GDScript" id="GDScript_jmv8v"]
-script/source = "@export_enum(\"Passive\", \"Decimal\") var type: String
+script/source = "extends Resource
+class_name ToolTipBase
+
+
+@export_enum(\"Passive\", \"Decimal\") var type: String
 @export var cost: int
 @export_multiline var description: String
 "

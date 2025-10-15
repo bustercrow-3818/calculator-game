@@ -36,6 +36,7 @@ func menu_fadeout(menu:Menu = current_menu) -> void:
 	menu.hide()
 
 func enter_checkpoint() -> void:
+	SignalBus.time_request.emit()
 	menus["checkpoint"].set_current_options()
 	show_menu("checkpoint")
 	menus["checkpoint"].breath_pulse(true)

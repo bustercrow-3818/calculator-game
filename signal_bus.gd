@@ -13,6 +13,9 @@ signal checkpoint_signal
 signal checkpoint_exit_signal
 signal debug
 signal pick_upgrade(upgrade: Upgrade, button: Button)
+signal purchase(cost: float)
+signal time_request
+signal time_report(qty: float)
 
 func score_received(qty: int) -> void:
 	score.emit(qty)

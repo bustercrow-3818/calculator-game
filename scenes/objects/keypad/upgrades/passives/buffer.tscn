@@ -4,6 +4,7 @@
 
 [node name="buffer" type="Node2D"]
 script = ExtResource("1_av0jf")
+cost = 60.0
 plain_text_name = "Buffer"
 description = "Passive
 Reduces maximum number of disabled buttons."

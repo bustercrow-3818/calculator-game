@@ -5,6 +5,7 @@
 [node name="baby_step" type="Node2D"]
 script = ExtResource("1_8geuf")
 base_charges = 2
+cost = 25.0
 plain_text_name = "Baby Step"
 description = "Decimal
 Adds 1 to the currently displayed value with no time reward penalty"

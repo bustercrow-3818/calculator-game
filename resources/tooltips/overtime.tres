@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TooltipData" load_steps=2 format=3 uid="uid://d3p21h5dihvi5"]
+
+[ext_resource type="Script" uid="uid://ccbkaigb71eli" path="res://resources/tooltips/tooltip_class.gd" id="1_2h8fc"]
+
+[resource]
+script = ExtResource("1_2h8fc")
+type = "Passive"
+cost = 30
+description = "Passive
+Increases time reward for solves by 1 second"
+metadata/_custom_type_script = "uid://ccbkaigb71eli"

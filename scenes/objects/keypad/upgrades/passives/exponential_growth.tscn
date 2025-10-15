@@ -6,7 +6,7 @@
 script = ExtResource("1_yepul")
 base_bonus = 1.1
 timeout = 3.0
-purchase_cost = 20.0
+cost = 10.0
 plain_text_name = "Exponential Growth"
 description = "Passive
 Solving targets quickly grants an escalating score bonus, growing exponentially. Initial bonus: 1.1, Time to reset bonus: 3.0s"
